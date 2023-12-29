@@ -8,12 +8,7 @@ var Course = mongoose.model('Course');
 
 function getTeachers(req, res){
 	var query = { };
-
-    var result = Teacher.find(query);
-
-	result.exec((err, data) => {
-		res.json(data);
-	});
+        Teacher.find(query).then((data)=>{res.json(data)})
 }
 
 function addTeacher(req, res){
