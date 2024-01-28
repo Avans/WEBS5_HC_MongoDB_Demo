@@ -8,7 +8,20 @@ var Course = mongoose.model('Course');
 
 function getTeachers(req, res){
 	var query = { };
+
+		//Alternatief
+		// var result = Teacher.find(query);
+		// 
+		// result.exec((err, data) => {
+		// 	if(err){console.log('err.message: '+err.message)}
+		// 	res.json(data);
+		// }); 
+
+		
+	    //Of gebruik deze verkorte versie. Waar moet hier de populate komen?
         Teacher.find(query).then((data)=>{res.json(data)})
+
+
 }
 
 function addTeacher(req, res){
